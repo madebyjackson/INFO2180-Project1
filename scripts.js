@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
             message.textContent = "Please enter a valid email address.";
             return;
         }
-
-        message.textContent =
-            "Thank you! Your email address " +
-            email +
-            " has been added to our mailing list!";
+        message.textContent = "Thank you! Your email address " + email + " has been added to our mailing list!";
     });
 });
