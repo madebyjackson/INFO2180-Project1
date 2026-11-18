@@ -1,11 +1,386 @@
-/* Add your CSS to this file */
+/* Base styles */
+:root {
+    --page-width: 960px;
+    --heading: #48bb78;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-size: 16px;
+    color: #2d3748;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .container {
+    width: calc(100% - 40px);
+    max-width: var(--page-width);
     margin: 0 auto;
-    max-width: 960px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+/* Header */
+header {
+    background: #ffffff;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: #6b7280;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #5A67D8;
+}
+
+/* Hero */
+.overview-hero {
+    background: #e2e8f0;
+}
+
+.overview-hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    min-height: 300px;
+    padding: 50px 0;
+}
+
+.overview-hero-image {
+    flex: 0 0 38%;
+}
+
+.overview-hero-image img {
+    display: block;
     width: 100%;
+    max-height: 220px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.overview-hero-text {
+    flex: 1;
+}
+
+.overview-hero-text h2 {
+    margin-bottom: 12px;
+    font-size: 32px;
+}
+
+.overview-hero-text p {
+    margin-bottom: 0;
+}
+
+/* Learn about cards */
+.learn-about {
+    padding: 70px 0;
+}
+
+.learn-about h2 {
+    margin-bottom: 32px;
+    color: #48bb78;
+    font-size: 24px;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.card > img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+    color: #48bb78;
+    font-size: 19px;
+}
+
+.card-body p {
+    margin-bottom: 0;
+    color: #4a5568;
+}
+
+/* COVID-19 testing */
+.testing {
+    background: #4a5568;
+    color: white;
+}
+
+.testing .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 220px;
+    padding: 45px 0;
+}
+
+.testing-desciption {
+    max-width: 650px;
+}
+
+.testing-desciption h2 {
+    margin-bottom: 10px;
+}
+
+.testing-desciption p {
+    margin-bottom: 0;
+}
+
+.cta {
+    flex-shrink: 0;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+    background: #48bb78;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 14px 22px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.testing .btn {
+    background: #48bb78;
+}
+
+/* Recent stories */
+.stories {
+    padding: 70px 0;
+}
+
+.stories h2 {
+    margin-bottom: 35px;
+    color: #48bb78;
+    font-size: 24px;
+}
+
+.stories article {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.stories article + article {
+    margin-top: 40px;
+}
+
+.stories article > img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    background: #e2e8f0;
+    object-fit: cover;
+}
+
+.article-body h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.article-body p {
+    color: #4a5568;
+}
+
+.article-body p:last-child {
+    margin-bottom: 0;
+}
+
+.article-body a {
+    color: #48bb78;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Newsletter */
+.newsletter {
+    background: #48bb78;
+    color: #ffffff;
+}
+
+.newsletter .container {
+    max-width: 600px;
+    padding: 55px 0;
+    text-align: center;
+}
+
+.newsletter h3 {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.newsletter p {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1 1 auto;
+    max-width: 390px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.newsletter .btn {
+    flex: 0 0 auto;
+    background: #5a67d8;
+}
+
+.message {
+    min-height: 24px;
+    margin-top: 16px;
+}
+
+/* Footer */
+footer {
+    background: #4a5568;
+    color: white;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    header .container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .overview-hero .container,
+    .testing .container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .overview-hero-image {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stories article {
+        grid-template-columns: 140px 1fr;
+        gap: 20px;
+    }
+
+    .stories article > img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .newsletter form {
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 520px) {
+    .stories article {
+        grid-template-columns: 1fr;
+    }
+
+    .stories article > img {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .form-group {
+        max-width: none;
+    }
 }
